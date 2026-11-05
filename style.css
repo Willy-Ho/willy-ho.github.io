@@ -186,33 +186,37 @@ h2 {
   font-size: 0.85rem;
 }
 
+/* Mobile styling for resume page */
 @media (max-width: 600px) {
-  .header-content,
-  .footer-content {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 12px;
-  }
+    .header-content,
+    .footer-content {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
 
-  nav {
-    gap: 18px;
-  }
+    nav {
+        gap: 18px;
+    }
 
-  .intro {
-    padding: 76px 0 88px;
-  }
+    .intro {
+        padding: 76px 0 88px;
+    }
 
-  .section-heading {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 12px;
-  }
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
 
-  .resume-preview {
-    height: 520px;
-  }
+    .resume-preview {
+        height: 520px;
+    }
+}
 
-  /* Center the projects section */
+/* PROJECTS PAGE */
+
+/* Center the projects section */
 .projects-main {
     max-width: 1100px;
     margin: 60px auto;
@@ -226,15 +230,57 @@ h2 {
 }
 
 .projects-main > p {
-    color: #666;
+    color: var(--muted);
     margin-bottom: 40px;
 }
 
 /* Arrange projects in a grid */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
+}
+
+/* Style each project box */
+.project {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    background-color: #fff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.project p {
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.project a {
+    color: var(--text);
+    text-decoration: underline;
+}
+
+.project a:hover {
+    color: var(--accent);
+}
+
+/* Hover effect for project boxes */
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Responsive projects grid */
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
 }
   
 /* Style each project box */
@@ -263,8 +309,6 @@ h2 {
 
 .project a:hover {
     color: #007bff;
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 /* Responsive layout for smaller screens */
